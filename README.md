@@ -1,6 +1,4 @@
-<div style="text-align:center">
-    ![Skeleton Dev](https://user-images.githubusercontent.com/1509726/199282306-7454adcb-b765-4618-8438-67655a7dee47.png)
-</div>
+![Skeleton Dev](https://user-images.githubusercontent.com/1509726/199282306-7454adcb-b765-4618-8438-67655a7dee47.png)
 
 # Svelte Skeleton Template
 
