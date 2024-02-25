@@ -75,3 +75,36 @@ The Svelte Skeleton Template offers robust support for internationalization (i18
     ```
 
     Here, `$t('translation.key')` accesses the desired translation. To inject dynamic values, provide an object with corresponding keys and values.
+
+### SVG Icons
+
+The template includes the `SvgIcon.svelte` component, designed to effortlessly render SVG icons within your application. This component streamlines the process of incorporating scalable vector graphics into your project, offering flexibility and ease of use.
+
+#### Implementation Details
+
+The `SvgIcon.svelte` component leverages a structured approach by storing essential icon metadata within the `src/lib/constants/icons.ts` file. This file serves as a centralized repository, containing an object with keys representing individual icons and their respective `viewBox` and `path` attributes. For instance:
+
+```typescript
+export const icons: { [key: string]: IIcon } = {
+    user: {
+        viewBox: 'view_box_of_svg_icon',
+        path: 'path_of_svg_icon',
+    }
+}
+```
+
+To further streamline the integration process, consider utilizing reputable icon libraries such as [Font Awesome Icons](https://fontawesome.com/search?m=free&o=r), where a vast array of high-quality icons are readily available for use.
+
+#### Rendering Icons
+
+Integrating icons into your application is straightforward. Simply import the `SvgIcon` component and specify the desired icon using the `name` prop, as illustrated below:
+
+```svelte
+<script lang=ts>
+    import SvgIcons from '$lib/components/common/SvgIcon/SvgIcon.svelte';
+</script>
+
+<SvgIcons name="user" fill="fill-white" width="w-20" height="h-20" />
+```
+
+By providing the `name` prop with the corresponding icon identifier, you seamlessly incorporate SVG icons into your project, enhancing its visual appeal and user experience.
