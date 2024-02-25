@@ -2,6 +2,7 @@
 	"editor.codeActionsOnSave": {
 		"source.fixAll.eslint": "explicit"
 	},
+	"css.lint.unknownAtRules": "ignore",
 	"editor.formatOnSave": true,
 	"prettier.documentSelectors": ["**/*.svelte"],
 	"tailwindCSS.classAttributes": [
