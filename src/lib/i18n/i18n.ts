@@ -4,15 +4,15 @@ import translations from './translations';
 export const locale = writable('en');
 export const locales = Object.keys(translations);
 
-function translate(locale: string, key: string, vars: Record<string, string>) {
+function translate(locale: string, key: string, vars: Record<string, string>): string {
 	if (key.length < 1 || locale.length < 1) {
-		throw new Error('Invalid key or locale');
+		return key;
 	}
 
 	let text = translations[locale][key];
 
 	if (!text || text.length < 1) {
-		throw new Error(`No translations for ${locale}.${key}`);
+		return key;
 	}
 
 	Object.keys(vars).map((k) => {
