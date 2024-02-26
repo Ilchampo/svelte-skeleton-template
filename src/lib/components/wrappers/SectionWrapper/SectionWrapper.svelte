@@ -16,9 +16,6 @@
 	}
 
 	.section-container {
-		@apply relative z-10 
-        py-4 px-8
-        lg:py-24 lg:px-48
-        md:py-12 md:px-24;
+		@apply relative z-10 py-4 px-8 lg:py-24 lg:px-48 md:py-12 md:px-24;
 	}
 </style>

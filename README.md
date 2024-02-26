@@ -15,21 +15,24 @@ The Svelte Skeleton Template is a comprehensive project scaffold designed for we
 To get started, follow these steps:
 
 1. Install the project dependencies by running:
-    ```bash
-    npm install
-    ```
+
+   ```bash
+   npm install
+   ```
 
 2. Launch the development server with:
-    ```bash
-    npm run dev
-    ```
+
+   ```bash
+   npm run dev
+   ```
 
 3. For production deployment, build the application using:
-    ```bash
-    npm run build
-    ```
+   ```bash
+   npm run build
+   ```
 
 Before pushing changes to the main branch, it is recommended to run code formatting and linting:
+
 ```bash
 npm run format && npm run lint
 ```
@@ -48,11 +51,11 @@ The `SvgIcon.svelte` component leverages a structured approach by storing essent
 
 ```typescript
 export const icons: { [key: string]: IIcon } = {
-    user: {
-        viewBox: 'view_box_of_svg_icon',
-        path: 'path_of_svg_icon',
-    }
-}
+	user: {
+		viewBox: 'view_box_of_svg_icon',
+		path: 'path_of_svg_icon',
+	},
+};
 ```
 
 To further streamline the integration process, consider utilizing reputable icon libraries such as [Font Awesome Icons](https://fontawesome.com/search?m=free&o=r), where a vast array of high-quality icons are readily available for use.
@@ -62,8 +65,8 @@ To further streamline the integration process, consider utilizing reputable icon
 Integrating icons into your application is straightforward. Simply import the `SvgIcon` component and specify the desired icon using the `name` prop, as illustrated below:
 
 ```svelte
-<script lang=ts>
-    import SvgIcons from '$lib/components/common/SvgIcon/SvgIcon.svelte';
+<script lang="ts">
+	import SvgIcons from '$lib/components/common/SvgIcon/SvgIcon.svelte';
 </script>
 
 <SvgIcons name="user" fill="fill-white" width="w-20" height="h-20" />
@@ -79,32 +82,33 @@ The Svelte Skeleton Template offers robust support for internationalization (i18
 
 1. Ensure the correct translation keys are defined in `/src/lib/i18n/translations.ts`. Each locale is represented within an object, containing respective translation keys and values.
 
-    Example:
-    ```typescript
-    const translations: Record<string, Record<string, string>> = {
-        // English locale
-        en: {
-            'homepage.title': 'Svelte template for web pages',
-            'homepage.replace': 'Replace {{this}}!'
-        },
-        // Spanish locale
-        es: {
-            'homepage.title': 'Plantilla de Svelte para páginas web',
-            'homepage.replace': 'Reemplaza {{this}}!'
-        },
-    };
-    ```
+   Example:
+
+   ```typescript
+   const translations: Record<string, Record<string, string>> = {
+   	// English locale
+   	en: {
+   		'homepage.title': 'Svelte template for web pages',
+   		'homepage.replace': 'Replace {{this}}!',
+   	},
+   	// Spanish locale
+   	es: {
+   		'homepage.title': 'Plantilla de Svelte para páginas web',
+   		'homepage.replace': 'Reemplaza {{this}}!',
+   	},
+   };
+   ```
 
 2. Utilize translations within your Svelte components by importing the `t` function.
 
-    Example:
-    ```svelte
-    <script lang="ts">
-        import { t } from '$lib/i18n/i18n';
-    </script>
+   Example:
 
-    <p>{$t('homepage.title')}</p>
-    <p>{$t('homepage.replace', { this: 'Mark' })}</p>
-    ```
+   ```svelte
+   <script lang="ts">
+   	import { t } from '$lib/i18n/i18n';
+   </script>
 
-    Here, `$t('translation.key')` accesses the desired translation. To inject dynamic values, provide an object with corresponding keys and values.
+   <p>{$t('homepage.title')}</p><p>{$t('homepage.replace', { this: 'Mark' })}</p>
+   ```
+
+   Here, `$t('translation.key')` accesses the desired translation. To inject dynamic values, provide an object with corresponding keys and values.

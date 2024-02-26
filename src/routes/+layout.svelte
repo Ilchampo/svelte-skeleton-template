@@ -3,13 +3,16 @@
 
 	import hljs from 'highlight.js/lib/core';
 	import 'highlight.js/styles/github-dark.css';
-	import { storeHighlightJs } from '@skeletonlabs/skeleton';
+	import { AppShell, storeHighlightJs } from '@skeletonlabs/skeleton';
 	import xml from 'highlight.js/lib/languages/xml';
 	import css from 'highlight.js/lib/languages/css';
 	import javascript from 'highlight.js/lib/languages/javascript';
 	import typescript from 'highlight.js/lib/languages/typescript';
 
 	import PageWrapper from '$lib/components/wrappers/PageWrapper/PageWrapper.svelte';
+	import Navbar from '$lib/components/common/Navbar/Navbar.svelte';
+
+	import navigation from '$lib/constants/navigation';
 
 	hljs.registerLanguage('xml', xml);
 	hljs.registerLanguage('css', css);
@@ -23,5 +26,10 @@
 </script>
 
 <PageWrapper pageTitle="Svelte Template">
-	<slot />
+	<AppShell>
+		<svelte:fragment slot="header">
+			<Navbar {navigation} />
+		</svelte:fragment>
+		<slot />
+	</AppShell>
 </PageWrapper>
